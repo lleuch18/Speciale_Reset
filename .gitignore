@@ -1,0 +1,15 @@
+#Following files will be ignored due to excessive size
+Chunk_CircAdapt_Workspace.mat
+Chunk_Process.mat
+Post_Model_Processing.mat
+Post_Processing_Vejledermoede.mat
+
+#Incase only filename is necessary to exclude
+Chunk_CircAdapt_Workspace
+Chunk_Process
+Post_Model_Processing
+Post_Processing_Vejledermoede
+
+#Following folders will be ignored
+Physiological_Modelling/
+Diktafon/

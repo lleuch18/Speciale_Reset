@@ -1,0 +1,212 @@
+<mxfile host="app.diagrams.net" modified="2024-01-10T09:29:45.712Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="k6acKTqxNnpgac9iFIP0" version="22.1.18" type="github">
+  <diagram name="Page-1" id="dxkUu_h541sHtngTb_Nf">
+    <mxGraphModel dx="1434" dy="738" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-1" value="&lt;b&gt;Derive Parameters and Inputs&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;labelBackgroundColor=none;fontColor=#393C56;" parent="1" vertex="1">
+          <mxGeometry x="304" y="80" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-2" target="FZ5DHeCZTq1QPbefAQ_P-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="190" />
+              <mxPoint x="500" y="240" />
+              <mxPoint x="180" y="240" />
+              <mxPoint x="180" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-2" value="Estimate R&lt;sub&gt;aw&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="1" vertex="1">
+          <mxGeometry x="362" y="160" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-3" target="FZ5DHeCZTq1QPbefAQ_P-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-3" value="Detect highest PS setting" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="200" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-4" target="FZ5DHeCZTq1QPbefAQ_P-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-4" value="Extract 5 patient breaths" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="360" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-5" target="FZ5DHeCZTq1QPbefAQ_P-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="290" />
+              <mxPoint x="670" y="340" />
+              <mxPoint x="342" y="340" />
+              <mxPoint x="342" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-5" value="Run optimization algorithm on cost function" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="524" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-6" target="FZ5DHeCZTq1QPbefAQ_P-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="500" y="390" />
+              <mxPoint x="500" y="440" />
+              <mxPoint x="180" y="440" />
+              <mxPoint x="180" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-6" value="Estimate C&lt;span style=&quot;font-size: 10px;&quot;&gt;rs&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="1" vertex="1">
+          <mxGeometry x="362" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-7" target="FZ5DHeCZTq1QPbefAQ_P-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-7" value="At highest PS setting" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="200" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-8" target="FZ5DHeCZTq1QPbefAQ_P-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-8" value="For each breath&lt;br&gt;C&lt;sub style=&quot;border-color: var(--border-color);&quot;&gt;rs&amp;nbsp;&lt;/sub&gt;=ΔV/ΔP" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="360" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-9" target="FZ5DHeCZTq1QPbefAQ_P-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="490" />
+              <mxPoint x="670" y="540" />
+              <mxPoint x="342" y="540" />
+              <mxPoint x="342" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-9" value="C&lt;sub&gt;rs &lt;/sub&gt;= Average Across Breaths" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="524" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-10" target="FZ5DHeCZTq1QPbefAQ_P-11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="590" />
+              <mxPoint x="510" y="640" />
+              <mxPoint x="262" y="640" />
+              <mxPoint x="262" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-10" value="Estimate P&lt;sub&gt;mus&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="1" vertex="1">
+          <mxGeometry x="362" y="560" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-11" target="FZ5DHeCZTq1QPbefAQ_P-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-11" value="For each breath" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="282" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-12" target="FZ5DHeCZTq1QPbefAQ_P-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="690" />
+              <mxPoint x="590" y="740" />
+              <mxPoint x="340" y="740" />
+              <mxPoint x="340" y="790" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-12" value="P&lt;sub&gt;mus &lt;/sub&gt;= &lt;br&gt;(V&lt;sub&gt;t&lt;/sub&gt;-V(max(P&lt;sub&gt;ao&lt;/sub&gt;)))/C&lt;sub&gt;rs&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="442" y="660" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-14" target="FZ5DHeCZTq1QPbefAQ_P-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="790" />
+              <mxPoint x="510" y="840" />
+              <mxPoint x="181" y="840" />
+              <mxPoint x="181" y="890" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-14" value="Extract inspiratory- and expiratory time" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="1" vertex="1">
+          <mxGeometry x="360" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-15" target="FZ5DHeCZTq1QPbefAQ_P-16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-15" value="For each breath" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="201" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-16" target="FZ5DHeCZTq1QPbefAQ_P-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-16" value="Inspiratory time = positive flow duration" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="359" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-17" target="FZ5DHeCZTq1QPbefAQ_P-18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="890" />
+              <mxPoint x="670" y="940" />
+              <mxPoint x="339" y="940" />
+              <mxPoint x="339" y="990" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-17" value="Expiratory time = negative flow duration" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#B9E0A5;fontColor=#393C56;fillColor=#B9E0A5;" parent="1" vertex="1">
+          <mxGeometry x="519" y="860" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="FZ5DHeCZTq1QPbefAQ_P-18" target="Y7V8t7TljaAREovISsIo-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="990" />
+              <mxPoint x="510" y="1040" />
+              <mxPoint x="24" y="1040" />
+              <mxPoint x="24" y="1090" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="FZ5DHeCZTq1QPbefAQ_P-18" value="Extract PPV" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" parent="1" vertex="1">
+          <mxGeometry x="359" y="960" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Y7V8t7TljaAREovISsIo-7" target="Y7V8t7TljaAREovISsIo-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-7" value="For each breath" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" vertex="1" parent="1">
+          <mxGeometry x="44" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Y7V8t7TljaAREovISsIo-8" target="Y7V8t7TljaAREovISsIo-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-8" value="Extract max P&lt;sub&gt;pa &lt;/sub&gt;at inspiration" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" vertex="1" parent="1">
+          <mxGeometry x="203" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Y7V8t7TljaAREovISsIo-9" target="Y7V8t7TljaAREovISsIo-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-9" value="Extract min P&lt;sub style=&quot;border-color: var(--border-color);&quot;&gt;pa&amp;nbsp;&lt;/sub&gt;at inspiration" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" vertex="1" parent="1">
+          <mxGeometry x="362" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y7V8t7TljaAREovISsIo-10" target="Y7V8t7TljaAREovISsIo-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-10" value="Extract max P&lt;sub style=&quot;border-color: var(--border-color);&quot;&gt;pa&amp;nbsp;&lt;/sub&gt;at expiration" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" vertex="1" parent="1">
+          <mxGeometry x="519" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Y7V8t7TljaAREovISsIo-11" target="Y7V8t7TljaAREovISsIo-12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="820" y="1090" />
+              <mxPoint x="820" y="1140" />
+              <mxPoint x="338" y="1140" />
+              <mxPoint x="338" y="1190" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-11" value="Extract min P&lt;sub style=&quot;border-color: var(--border-color);&quot;&gt;pa&amp;nbsp;&lt;/sub&gt;at expiration" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#97D077;fontColor=#393C56;fillColor=#B9E0A5;" vertex="1" parent="1">
+          <mxGeometry x="676" y="1060" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Y7V8t7TljaAREovISsIo-12" value="Extract: PS, PEEP&lt;br&gt;&lt;br&gt;Derive: TCT, Risetime, P&lt;sub&gt;musInsp+Deflate&amp;nbsp;&lt;/sub&gt;" style="rounded=0;whiteSpace=wrap;html=1;labelBackgroundColor=none;fillColor=#F2CC8F;strokeColor=#E07A5F;fontColor=#393C56;" vertex="1" parent="1">
+          <mxGeometry x="358" y="1160" width="128" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
