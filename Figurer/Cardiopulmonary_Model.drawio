@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-01-17T11:26:35.349Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="hZ885pxqDj2ZmZjpOlrp" version="22.1.18" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-17T14:48:56.425Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" etag="c_CY89Zkc4B5MIdaifY7" version="22.1.18" type="github">
   <diagram name="Page-1" id="TR93Qj6P3qMj8oh4tTKZ">
     <mxGraphModel dx="2876" dy="2223" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -9,6 +9,9 @@
         </mxCell>
         <mxCell id="UJ65HYksv7-CHMOgC7f_-6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;dashPattern=8 8;" vertex="1" parent="1">
           <mxGeometry x="564" y="12" width="650" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-18" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-24" y="1" width="1274" height="545" as="geometry" />
         </mxCell>
         <mxCell id="UJ65HYksv7-CHMOgC7f_-4" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;&lt;b&gt;Intrathoracic Cavity&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="373" y="34" width="160" height="30" as="geometry" />
@@ -46,14 +49,29 @@
         <mxCell id="UJ65HYksv7-CHMOgC7f_-17" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 25px;&quot;&gt;Respiratory System&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="105.5" y="99" width="160" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="UJ65HYksv7-CHMOgC7f_-18" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="-24" y="1" width="1274" height="545" as="geometry" />
-        </mxCell>
         <mxCell id="UJ65HYksv7-CHMOgC7f_-19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;" vertex="1" parent="1">
           <mxGeometry x="-24" y="546" width="1275" height="336" as="geometry" />
         </mxCell>
         <mxCell id="UJ65HYksv7-CHMOgC7f_-20" value="&lt;font style=&quot;font-size: 30px;&quot;&gt;&lt;b&gt;Abdominal Cavity&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="423" y="601" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-21" value="TCV" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="579" y="341.5" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-22" value="PMV" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="579" y="152" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-23" value="MV" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="1053" y="247" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-24" value="AOV" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;" vertex="1" parent="1">
+          <mxGeometry x="1053" y="439" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-25" value="ra = Right Atrium&lt;br&gt;rv = Right Ventricle&lt;br&gt;pa = Pulmonary Artery&lt;br&gt;pc = Pulmonary Capillaries&lt;br&gt;pv = Pulmonary Veins&lt;br&gt;la = Left Atrium&lt;br&gt;lv = Left Ventricle&lt;br&gt;msa = Mean Systemic Arterial&lt;br&gt;msv = Mean Systemic Venous&lt;br&gt;TCV = Tricuspid Valve&lt;br&gt;PMV = Pulmonary Valve&lt;br&gt;MV = Mitral Valve&lt;br&gt;AOV = Aortic Valve" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 4;" vertex="1" parent="1">
+          <mxGeometry x="9" y="585" width="280" height="268" as="geometry" />
+        </mxCell>
+        <mxCell id="UJ65HYksv7-CHMOgC7f_-26" value="&lt;font size=&quot;1&quot; style=&quot;&quot;&gt;&lt;b style=&quot;font-size: 20px;&quot;&gt;Legend&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="119" y="596" width="60" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
