@@ -14,10 +14,10 @@ P.resp.breath_cnt = 0;
 disp(['PS:', num2str(P.resp.PS),'PmusSet:',num2str(abs(P.resp.PmusSet))])
 if P.resp.PS > abs(P.resp.PmusSet)
     disp('RUN PPV')
-    positive_pressure_ventilation(Ppl0,start_time,end_time,chunk,breath)
+    positive_pressure_ventilation(Ppl0,start_time,end_time)
 else
      disp('RUN NPV')
-     negative_pressure_ventilation(Ppl0,start_time,end_time,chunk,breath)
+     negative_pressure_ventilation(Ppl0,start_time,end_time)
 end
 
 

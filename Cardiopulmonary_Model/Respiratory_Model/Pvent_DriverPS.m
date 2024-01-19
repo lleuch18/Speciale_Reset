@@ -16,6 +16,7 @@ Te = round(P.resp.Te,3);
 
 
 
+
 %% Decouple Pvent from Simulation Time
 TCT = round(P.resp.TCT,3); %Reduce Verboseness (reduced performance is negligible)
 
@@ -26,7 +27,7 @@ if isfield(P.resp,'TCT_cnt') == 0
 end
 
 % Ensure that t is between 0 and SBT_lgth
-t = round(t,3);
+t = round(t-P.resp.TCT_cnt*TCT,3);
 
 if t <0.1
     %disp(['t from Pvent perspective: ', num2str(t)])

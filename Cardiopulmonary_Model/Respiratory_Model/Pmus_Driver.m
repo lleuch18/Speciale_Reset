@@ -3,7 +3,7 @@ function Pmus = Pmus_Driver(t,Pmus_Cycle)
 %spontaneous breathing are met, and PS trigger hasn't been reached
 
 global P
-t=round(t,3);
+
 %% Pre-define variables for cleaner code
 PS = P.resp.PS;
 %PEEP = P.resp.PEEP;
@@ -52,6 +52,8 @@ if mod(t,SBT_lgth) == 0 && t>0
     P.resp.SBT_cnt = P.resp.SBT_cnt + 1;
     disp(['SBT_cnt: ',num2str(P.resp.SBT_cnt)])
 end
+
+t=round(t-P.resp.SBT_cnt*SBT_lgth,3);
 
 
 

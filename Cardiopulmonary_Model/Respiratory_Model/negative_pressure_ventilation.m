@@ -1,4 +1,4 @@
-function negative_pressure_ventilation(Ppl0,start_time,end_time,chunk,breath)
+function negative_pressure_ventilation(Ppl0,start_time,end_time)
 % Models the respiratory system during Negative Pressure Ventilation (NPV)
 global P
 
@@ -43,7 +43,7 @@ for i = 1:length(t)
     Pmus = Pmus_Driver(t(i),Pmus_Cycle);
 
     if i > 1 
-    dPmus = Pmus-P.model{breath,chunk}.data(i-1,4);   
+    dPmus = Pmus-P.resp.Pmus(i-1);   
     end
 
     %% Pvent Activation
@@ -63,18 +63,27 @@ for i = 1:length(t)
     
     % dV then creates a dPao, through either in- or deflation
     dPao = dV/(P.resp.Crs*10^-3); %Change in pressure ((L/dt)*dt)/(L/P) =(P/dt)*dt = P
-    Pao = Pao+dPao;
+    %dPao = -dPao;
+    Pao = Pao+dPao; %NPV change is negative, even when volume is positive
     
     %% Ppl
     %Seperate Ppl section for a cleaner code
-    dPpl = (dV/P.resp.Cw)-dPmus; %Pmus = V(t)/Cw-dPpl(t) - Thus Ppl is calculated from Pmus 
-    dPpl = dPpl+dPao; %Add changes from Pao aswell as Pmus
+    dPpl = (dV/P.resp.Cw)-dPmus; %Pmus = V(t)/Cw-dPpl(t) - Thus Ppl is calculated from Pmus
+
+    if round(abs(dPmus),5) == round(dPmus,5)
+        %disp(['Equal at i: ',num2str(i)])
+    else
+        %disp(['Not equal at i: ',num2str(i), ' difference is:', num2str(round(abs(dPmus),3) - round(dPmus,3))])
+    end
+    %dPpl = dPpl+dPao; %Add changes from Pao aswell as Pmus
     %disp(['dPpl:',num2str(dPpl)])
     Ppl = Ppl+dPpl; % Calculate Ppl
+    Ppl = Ppl + dPao;
     
     
      %% PMusCycle state
-     %Cycle must be checked after flow has been calculated
+     
+    %Cycle must be checked after flow has been calculated
     if flow >= P.resp.PmusCycle && Pmus_Cycle == false && i>2 
         Pmus_Cycle = true; %Sets cycle to true, begins Pmus monotonic decrease towards 0
         P.resp.PmusCycleTime = t(i)-(P.resp.breath_cnt*P.resp.TCT); %Records the time at which cycle variable is reached, normalized for breath_cnt
@@ -84,7 +93,10 @@ for i = 1:length(t)
         disp(num2str(Pmus));
     end
     
+
+
+    
     %% Housekeeping
-    Housekeep(i,flow,V,Pvent,Pmus,Ppl,Pao,chunk,breath);    
+    Housekeep(i,flow,V,Pvent,Pmus,Ppl,Pao);    
 end
 

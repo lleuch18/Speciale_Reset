@@ -1,4 +1,4 @@
-function positive_pressure_ventilation(Ppl0,start_time,end_time,chunk,breath)
+function positive_pressure_ventilation(Ppl0,start_time,end_time)
 % Positive pressure ventilation occurs when PS is below Pmusset, thus
 % the ventilator is providing external respiration
 
@@ -51,7 +51,7 @@ while i <= length(t)
     Pmus = Pmus_Driver(t(i),Pmus_Cycle);
 
     if i > 1 
-    dPmus = Pmus-P.model{breath,chunk}.data(i-1,4); %Pmus is 4th column
+    dPmus = Pmus-P.resp.Pmus(i-1); %Pmus is 4th column
     end
 
     %% Pvent Activation
@@ -91,11 +91,11 @@ while i <= length(t)
         disp(['PMUS CYCLE TIME AT: ', num2str(P.resp.PmusCycleTime)])
         
         P.resp.Pmus_At_CV = Pmus;
-        disp(num2str(Pmus));
+        disp(['PMUS is:', num2str(Pmus)]);
     end
     
     %% Housekeeping
-    Housekeep(i,flow,V,Pvent,Pmus,Ppl,Pao,chunk,breath) 
+    Housekeep(i,flow,V,Pvent,Pmus,Ppl,Pao) 
     
     i = i+1;
 end
