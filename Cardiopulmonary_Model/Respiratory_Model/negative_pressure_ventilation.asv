@@ -53,7 +53,7 @@ for i = 1:length(t)
     %% Pvent Activation
     Pvent = Pvent_DriverPS(t(i),PSTrigger); %Pressure delivered by vent at t [cmH2O]
     
-    k = 0.00001;
+    k = -1;
     p=1;
     
     if t(i)-P.resp.SBT_cnt*SBT_lgth<=P.resp.Ti
@@ -143,21 +143,17 @@ for i = 1:length(t)
 end
 
 
-subplot(2,2,1)
+subplot(3,1,1)
 plot(P.resp.dPmus)
 title('dPmus')
 legend(num2str(mean(P.resp.dPmus)))
-subplot(2,2,2)
+subplot(3,1,2)
 plot(P.resp.dPao)
 title('dPao')
 legend(num2str(mean(P.resp.dPao)))
-subplot(2,2,3)
+subplot(3,1,3)
 plot(P.resp.dPpl)
 title('dPpl')
-legend(num2str(mean(P.resp.dPpl)))
-subplot(2,2,4)
-plot(P.resp.V)
-title('V')
-legend(num2str(mean(P.resp.V)))
+legend(num2str(mean(P.resp.dPpl())))
 
 %k = 0.5

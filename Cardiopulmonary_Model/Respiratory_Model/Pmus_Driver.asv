@@ -5,10 +5,13 @@ function Pmus = Pmus_Driver(t,Pmus_Cycle)
 global P
 
 %% Pre-define variables for cleaner code
-Tdeflate = P.resp.Te*0.3%-P.resp.PmusPause%(0.7*P.resp.Te);%%P.resp.Tdeflate;
+PS = P.resp.PS;
+%PEEP = P.resp.PEEP;
+Trise = P.resp.Trise;
+Tdeflate = P.resp.Tdeflate;
 PmusTi = P.resp.Ti;
 PmusTe = P.resp.Te;
-
+PmusPause = 2; %P.resp.TCT-P.resp.Ti-P.resp.Te; %Ensures that SBT lgth & PS lgth are equal - based on TCT
 
 Tstart = 0;
 PmusSet = P.resp.PmusSet; 
@@ -26,8 +29,8 @@ end
 %Compute the same expiratory profile, at situations where CV is never
 %active
 if isfield(P.resp, 'Pmus_Exp_NoTrigger') == 0    
-    P.resp.t_exp = [0:P.resp.dt:Tdeflate]';
-    P.resp.Pmus_Exp_NoTrigger = P.resp.PmusSet*sin((pi/2)+(pi/(2*(Tdeflate))*P.resp.t_exp)); %P.resp.Pmus_Exp_NoTrigger = P.resp.Pmus_Exp_NoTrigger(end:-1:1);
+    P.resp.t_exp = [0:P.resp.dt:PmusTi+PmusDeflate]';
+    P.resp.Pmus_Exp_NoTrigger = P.resp.PmusSet*sin((pi/2)+(pi/(2*(PmusTe))*P.resp.t_exp)); %P.resp.Pmus_Exp_NoTrigger = P.resp.Pmus_Exp_NoTrigger(end:-1:1);
 end
 
 %% Decouple Spontaneous Breathing from Simulation Time
@@ -75,12 +78,12 @@ else
     if t >= Tstart && t <= round(PmusTi,3) %Monotonically increase during inspiration
         Pmus = PmusSet*sin((pi/(2*PmusTi))*t);
         %disp(['Pmus ', num2str(Pmus), 'At t', num2str(t)])
-    elseif t > PmusTi && t <= round(PmusTi+Tdeflate,3)  %Monotonically decrease during expiration-PmusPause
+    elseif t > PmusTi && t <= round(PmusTi+PmusDeflate,3)  %Monotonically decrease during expiration-PmusPause
         t = t-PmusTi; %Subtract PmusTi, to normalize time from PmusTe point of view        
         %Pmus = P.resp.Pmus_Exp_NoTrigger(find(abs(P.resp.t_exp-t)<0.001));
-        Pmus = P.resp.PmusSet*sin((pi/2)+(pi/(2*(Tdeflate))*t));        
+        Pmus = P.resp.PmusSet*sin((pi/2)+(pi/(2*(PmusTi-PmusDeflate))*t));        
     
-    elseif t > round(PmusTi+Tdeflate,3) && t <= PmusTe+PmusTi % 0 During pause between insp and exp
+    elseif t > round(PmusTe+PmusTi,3) && t <= PmusTe+PmusTi % 0 During pause between insp and exp
         Pmus = 0;
     end
 end

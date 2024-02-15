@@ -1,3 +1,177 @@
+function Pmus = Pmus_Driver(t,Pmus_Cycle)
+%PMUS_DRIVER Outputs Pmus at current time, given that conditions of
+%spontaneous breathing are met, and PS trigger hasn't been reached
+
+global P
+
+%% Pre-define variables for cleaner code
+PS = P.resp.PS;
+%PEEP = P.resp.PEEP;
+Trise = P.resp.Trise;
+Tdeflate = P.resp.Tdeflate;
+PmusTi = P.resp.Ti;
+PmusTe = P.resp.Te;
+PmusPause = 2; %P.resp.TCT-P.resp.Ti-P.resp.Te; %Ensures that SBT lgth & PS lgth are equal - based on TCT
+
+Tstart = 0;
+PmusSet = P.resp.PmusSet; 
+
+%% Create Pmus_Exp profile if it doesn't exist
+if isfield(P.resp, 'Pmus_Exp_PSTrigger') == 0 && Pmus_Cycle == true
+    %disp(['value of exist(): ', num2str(isfield(P.resp, 'Pmus_Exp_PSTrigger'))])
+    %Creates a pre-calculated version of Pmus at expiration, which is the
+    %inverse of inspiratory Pmus, with a frequency defined by PmusTe
+    %instead of PmusTi
+    P.resp.t_exp = [0:P.resp.dt:PmusTe]';   
+    P.resp.Pmus_Exp_PSTrigger = P.resp.Pmus_At_CV*sin((pi/2)+(pi/(2*PmusTe))*P.resp.t_exp);% P.resp.Pmus_Exp_PSTrigger = P.resp.Pmus_Exp_PSTrigger(end:-1:1);
+end
+
+%Compute the same expiratory profile, at situations where CV is never
+%active
+if isfield(P.resp, 'Pmus_Exp_NoTrigger') == 0    
+    P.resp.t_exp = [0:P.resp.dt:PmusTe+PmusPause]';
+    P.resp.Pmus_Exp_NoTrigger = P.resp.PmusSet*sin((pi/2)+(pi/(2*(PmusTe))*P.resp.t_exp)); %P.resp.Pmus_Exp_NoTrigger = P.resp.Pmus_Exp_NoTrigger(end:-1:1);
+end
+
+%% Decouple Spontaneous Breathing from Simulation Time
+% Set total SBT cycle length
+SBT_lgth = round(PmusTi+PmusTe,3); %Round() Necessary for float-point comparison in mod(t,SBT_lgth)
+
+
+%Creates SBT_cnt if it doesn't exist
+if isfield(P.resp,'SBT_cnt') == 0 
+     P.resp.SBT_cnt = 0;     
+end
+
+% Ensure that t is between 0 and SBT_lgth
+%t = round(t-(P.resp.SBT_cnt*SBT_lgth),3);
+
+
+%Checks if t has reached end of SBT cycle, and increases SBT_cnt if yes
+if mod(t,SBT_lgth) == 0 && t>0     
+    P.resp.SBT_cnt = P.resp.SBT_cnt + 1;
+    disp(['SBT_cnt: ',num2str(P.resp.SBT_cnt)])
+end
+
+t=round(t-P.resp.SBT_cnt*SBT_lgth,3);
+
+
+
+
+
+%% Assign Pmus based on time 
+if Pmus_Cycle    
+    %Subtract TriggerTime, in order to access Pmus_Exp at its origin
+    t = t-P.resp.PmusCycleTime;   
+    
+    if t<=PmusTe
+
+        %Acceses the pre-calculated Pmus at expiration, at index
+        %corresponding to current time
+    Pmus = P.resp.Pmus_Exp_PSTrigger(find(abs(P.resp.t_exp-t)<0.001));
+    else
+        Pmus=0;
+    end
+
+else
+    
+    if t >= Tstart && t <= round(PmusTi,3) %Monotonically increase during inspiration
+        Pmus = PmusSet*sin((pi/(2*PmusTi))*t);
+        %disp(['Pmus ', num2str(Pmus), 'At t', num2str(t)])
+    elseif t > PmusTi && t <= round(PmusTi+PmusTe-PmusPause,3)  %Monotonically decrease during expiration-PmusPause
+        t = t-PmusTi; %Subtract PmusTi, to normalize time from PmusTe point of view        
+        %Pmus = P.resp.Pmus_Exp_NoTrigger(find(abs(P.resp.t_exp-t)<0.001));
+        Pmus = P.resp.PmusSet*sin((pi/2)+(pi/(2*(PmusTe-PmusPause))*t));        
+    
+    elseif t > round(PmusTe+PmusTi-PmusPause,3) && t <= PmusTe+PmusTi % 0 During pause between insp and exp
+        Pmus = 0;
+    end
+end
+endif t(i)-P.resp.SBT_cnt*SBT_lgth == P.resp.Ti+P.resp.dt
+            for t_i = 1:P.resp.Te/P.resp.dt
+                flow = (((Pvent-P.resp.PEEP)-Ppl)/P.resp.R);
+                
+        
+                dV = flow*P.resp.dt; 
+                
+                V = V + dV; %        
+        
+                if i > 1 
+                dPmus = Pmus-P.resp.Pmus(i-1) 
+                dPmus = p*dPmus
+                end
+                P.resp.dPmus(i) = dPmus;
+        
+                dPao = (dV*10^3)/(P.resp.Crs);
+                dPao = k*dPao;
+        
+                dPpl = dPmus+((dV*10^3)/(P.resp.Cw));%+; %Pmus = V(t)/Cw-dPpl(t) - Thus Ppl is calculated from Pmus
+                Ppl = Ppl+dPpl; % Calculate Ppl
+            end
+            flowstart = flow;
+            dPplstart = dPpl;
+            Pplstart = Ppl;
+            dPaostart = dPao;
+            dPmusstart = dPmus;
+            dVstart = dV;
+            Vstart = V;
+        end
+        
+        if  t(i)-P.resp.SBT_cnt*SBT_lgth == P.resp.Ti+P.resp.dt
+            flow = flowstart
+             
+            dPpl = dPplstart;
+            Ppl = Pplstart;
+            dPao = dPaostart;
+            dPmus = dPmusstart;
+            dV = dVstart;
+            V = Vstart;
+        else    %{
+    peakflow=flow;
+    elseif t(i)-P.resp.SBT_cnt*SBT_lgth >= P.resp.Ti && t(i)-P.resp.SBT_cnt*SBT_lgth <= P.resp.Ti + P.resp.PmusPause %&& flow > 0
+        t_p = t(i)-P.resp.SBT_cnt*SBT_lgth-P.resp.Ti;%-P.resp.PmusPause
+
+        %Flow is driven by the dP of Pvent-Pmus      
+        %flow=(((Pvent-P.resp.PEEP)-Ppl)/P.resp.R); %[L/s] -> [L/min] at plot
+        %flow=abs(flow);
+        flow = peakflow*sin((pi/2)+((pi*t_p)/(2*P.resp.PmusPause)));
+        
+        dV = flow*P.resp.dt; 
+
+        V = V + dV; %
+      
+        
+        start_exp=flow;
+    %}
+
+   %% Ppl
+    %Seperate Ppl section for a cleaner code
+   % dPpl = ((dV)/(P.resp.Cw*10^-3))+dPmus; %Pmus = V(t)/Cw-dPpl(t) - Thus Ppl is calculated from Pmus
+
+   
+    %dPpl = dPpl+dPao; %Add changes from Pao aswell as Pmus
+    %disp(['dPpl:',num2str(dPpl)])
+    %Ppl = Ppl+dPpl; % Calculate Ppl
+    %Ppl = Ppl - dPao
+    
+    
+     %% PMusCycle state
+     %{
+    %Cycle must be checked after flow has been calculated
+    if flow >= P.resp.PmusCycle && Pmus_Cycle == false && i>2 
+        Pmus_Cycle = true; %Sets cycle to true, begins Pmus monotonic decrease towards 0
+        P.resp.PmusCycleTime = t(i)-(P.resp.breath_cnt*P.resp.TCT); %Records the time at which cycle variable is reached, normalized for breath_cnt
+        disp(['PMUS CYCLE TIME AT: ', num2str(P.resp.PmusCycleTime)])
+        
+        P.resp.Pmus_At_CV = Pmus;
+        disp(num2str(Pmus));
+    end
+     %}
+
+         % dV then creates a dPao, through either in- or deflation
+    %Change in pressure ((L/dt)*dt)/(L/P) =(P/dt)*dt = P
+    %dPao = -dPao;
+
 %% Previous Chunk Shift Mechanism
 for ib = 1:length(timeframes)
         if  ~isempty(find(abs(timechunk{timeframes(ib)}-round(start/100,3))<0.001))

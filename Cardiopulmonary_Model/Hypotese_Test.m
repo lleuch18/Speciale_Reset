@@ -210,7 +210,7 @@ for ia = 1:num_timeframes
            exp_length = length(find(flowchunk{chunk}(midpeak:endpeak)<-8));
     
            b_length = insp_length+exp_length;
-        P\ 
+         
             % 2. Extract PPV data at filtered breath timeframes 
             d3 = nd3{chunk}(b_i); %d3=maxinsp-minexp
             d4 = nd4{chunk}(b_i); %d4=mininsp-maxexp
